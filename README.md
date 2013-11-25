@@ -1,4 +1,4 @@
 compress
 ========
 
-Compress
+Compress library
