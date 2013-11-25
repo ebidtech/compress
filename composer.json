@@ -21,6 +21,5 @@
     },
     "autoload": {
         "psr-0": { "EBT\\Compress": "src/" }
-    },
-    "target-dir": "EBT/Compress"
+    }
 }
