@@ -24,7 +24,7 @@ trait GzencodeCompressorTrait
     /**
      * {@inheritDoc}
      */
-    public function getName()
+    public function getCompressorName()
     {
         return GzencodeCompressor::NAME;
     }

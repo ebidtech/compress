@@ -19,7 +19,7 @@ trait NullCompressorTrait
     /**
      * {@inheritDoc}
      */
-    public function getName()
+    public function getCompressorName()
     {
         return NullCompressor::NAME;
     }

@@ -19,7 +19,7 @@ class NullCompressor implements CompressorInterface
     const NAME = 'null';
 
     use NullCompressorTrait {
-        getName as public;
+        getCompressorName as public;
         compressUTF8encoded as public;
         compress as public;
         uncompress as public;

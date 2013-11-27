@@ -1,6 +1,6 @@
 # Compress #
 
-A simple wrapper to provide a common interface for data compression.
+A simple wrapper to provide a common interface for data compression. Making easy to change the compression algorithm and use a common interface.
 
 [![Latest Stable Version](https://poser.pugx.org/ebidtech/compress/v/stable.png)](https://packagist.org/packages/ebidtech/compress)
  [![Build Status](https://travis-ci.org/ebidtech/compress.png?branch=v0.2)](https://travis-ci.org/ebidtech/compress) [![Coverage Status](https://coveralls.io/repos/ebidtech/compress/badge.png?branch=master)](https://coveralls.io/r/ebidtech/compress?branch=master)
@@ -27,17 +27,53 @@ Just create a `composer.json` file for your project:
 
 And run these two commands to install it:
 
-``` bash
+```bash
 $ curl -sS https://getcomposer.org/installer | php
 $ composer install
 ```
 
 Now you can add the autoloader, and you will have access to the library:
 
-``` php
+```php
 <?php
 
 require 'vendor/autoload.php';
 ```
 
 ## Usage ##
+
+### Builder ###
+
+```php
+use EBT\Compress\CompressBuilder;
+
+$compressor = CompressBuilder::create()->get('gzencode');
+$compressedData = $compressor->compress('some text');
+echo $compressor->uncompress($compressedData); // will print 'some text'
+```
+
+### Regular way ###
+
+```php
+use EBT\Compress\GzcompressCompressor as Compressor;
+
+$compressor = new Compressor();
+$compressedData = $compressor->compress('some text');
+echo $compressor->uncompress($compressedData); // will print 'some text'
+```
+
+### Traits ###
+
+```php
+use EBT\Compress\GzcompressCompressorTrait as CompressorTrait;
+
+class Test
+{
+    use CompressorTrait;
+
+    public function test()
+    {
+        $compressedData = $this->compress('test');
+        echo $this->uncompress($compressedData); // will print 'some text'
+    }
+}

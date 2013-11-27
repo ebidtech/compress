@@ -19,7 +19,7 @@ use EBT\Compress\Exception\InvalidArgumentException;
 class GzencodeCompressor implements CompressorInterface
 {
     use GzencodeCompressorTrait {
-        getName as public;
+        getCompressorName as public;
         compressUTF8encoded as public;
         compress as public;
         uncompress as public;

@@ -19,7 +19,7 @@ trait GzinflateCompressorTrait
     /**
      * {@inheritDoc}
      */
-    public function getName()
+    public function getCompressorName()
     {
         return GzinflateCompressor::NAME;
     }

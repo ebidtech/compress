@@ -38,5 +38,5 @@ interface CompressorInterface
     /**
      * @return string
      */
-    public function getName();
+    public function getCompressorName();
 }

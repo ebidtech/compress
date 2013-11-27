@@ -18,9 +18,9 @@ use EBT\Compress\GzcompressCompressor;
  */
 class GzcompressTest extends TestCase
 {
-    public function testGetName()
+    public function testGetCompressorName()
     {
-        $this->assertEquals(GzcompressCompressor::NAME, (new GzcompressCompressor())->getName());
+        $this->assertEquals(GzcompressCompressor::NAME, (new GzcompressCompressor())->getCompressorName());
     }
 
     public function testCompressUncompress()

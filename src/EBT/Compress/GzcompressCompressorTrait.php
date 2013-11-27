@@ -24,7 +24,7 @@ trait GzcompressCompressorTrait
     /**
      * {@inheritDoc}
      */
-    protected function getName()
+    protected function getCompressorName()
     {
         return GzcompressCompressor::NAME;
     }

@@ -18,9 +18,9 @@ use EBT\Compress\NullCompressor;
  */
 class NullCompressorTest extends TestCase
 {
-    public function testGetName()
+    public function testGetCompressorName()
     {
-        $this->assertEquals(NullCompressor::NAME, (new NullCompressor())->getName());
+        $this->assertEquals(NullCompressor::NAME, (new NullCompressor())->getCompressorName());
     }
     
     public function testCompressUncompress()

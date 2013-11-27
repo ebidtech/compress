@@ -18,9 +18,9 @@ use EBT\Compress\GzencodeCompressor;
  */
 class GzencodeTest extends TestCase
 {
-    public function testGetName()
+    public function testGetCompressorName()
     {
-        $this->assertEquals(GzencodeCompressor::NAME, (new GzencodeCompressor())->getName());
+        $this->assertEquals(GzencodeCompressor::NAME, (new GzencodeCompressor())->getCompressorName());
     }
 
     public function testCompressUncompress()
