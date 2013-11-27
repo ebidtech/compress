@@ -77,3 +77,17 @@ class Test
         echo $this->uncompress($compressedData); // will print 'some text'
     }
 }
+
+### Contributing ###
+
+See CONTRIBUTING file.
+
+### Credits ###
+
+* Emailbidding developer team, compress key developer Eduardo Oliveira (entering@gmail.com).
+* [All contributors](https://github.com/ebidtech/compress/contributors)
+
+### License ###
+
+Compress is released under the MIT License. See the bundled LICENSE file for details.
+
