@@ -16,14 +16,16 @@ use EBT\Compress\Exception\InvalidArgumentException;
 /**
  * GzencodeCompressor
  */
-class GzencodeCompressor extends BaseCompressor
+class GzencodeCompressor implements CompressorInterface
 {
-    const NAME = 'gzencode';
+    use GzencodeCompressorTrait {
+        getName as public;
+        compressUTF8encoded as public;
+        compress as public;
+        uncompress as public;
+    }
 
-    /**
-     * @var int
-     */
-    private $level;
+    const NAME = 'gzencode';
 
     /**
      * @param int $level    The level of compression. Can be given as 0 for no compression up to 9 for maximum
@@ -44,21 +46,5 @@ class GzencodeCompressor extends BaseCompressor
         }
 
         $this->level = $level;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function compress($data)
-    {
-        return gzencode($data);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function uncompress($data)
-    {
-        return gzdecode($data);
     }
 }

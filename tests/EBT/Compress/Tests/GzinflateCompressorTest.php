@@ -18,6 +18,11 @@ use EBT\Compress\GzinflateCompressor;
  */
 class GzinflateTest extends TestCase
 {
+    public function testGetName()
+    {
+        $this->assertEquals(GzinflateCompressor::NAME, (new GzinflateCompressor())->getName());
+    }
+
     public function testCompressUncompress()
     {
         $originalData = 'just a test';
@@ -25,5 +30,10 @@ class GzinflateTest extends TestCase
         $gzinflate = new GzinflateCompressor();
         $compressData = $gzinflate->compress($originalData);
         $this->assertEquals($originalData, $gzinflate->uncompress($compressData));
+    }
+
+    public function testCompressUTF8encoded()
+    {
+        $this->assertFalse((new GzinflateCompressor())->compressUTF8encoded());
     }
 }

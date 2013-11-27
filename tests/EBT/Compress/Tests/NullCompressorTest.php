@@ -18,6 +18,11 @@ use EBT\Compress\NullCompressor;
  */
 class NullCompressorTest extends TestCase
 {
+    public function testGetName()
+    {
+        $this->assertEquals(NullCompressor::NAME, (new NullCompressor())->getName());
+    }
+    
     public function testCompressUncompress()
     {
         $compressor = new NullCompressor();

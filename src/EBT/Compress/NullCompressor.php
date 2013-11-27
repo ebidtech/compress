@@ -14,31 +14,14 @@ namespace EBT\Compress;
 /**
  * NullCompressor
  */
-class NullCompressor extends BaseCompressor
+class NullCompressor implements CompressorInterface
 {
     const NAME = 'null';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function compress($data)
-    {
-        return $data;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function uncompress($data)
-    {
-        return $data;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function compressUTF8encoded()
-    {
-        return true;
+    use NullCompressorTrait {
+        getName as public;
+        compressUTF8encoded as public;
+        compress as public;
+        uncompress as public;
     }
 }

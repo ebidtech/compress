@@ -18,6 +18,11 @@ use EBT\Compress\GzcompressCompressor;
  */
 class GzcompressTest extends TestCase
 {
+    public function testGetName()
+    {
+        $this->assertEquals(GzcompressCompressor::NAME, (new GzcompressCompressor())->getName());
+    }
+
     public function testCompressUncompress()
     {
         $originalData = 'just a test';
@@ -41,5 +46,10 @@ class GzcompressTest extends TestCase
     public function testLevelTooSmall()
     {
         new GzcompressCompressor(-10);
+    }
+
+    public function testCompressUTF8encoded()
+    {
+        $this->assertFalse((new GzcompressCompressor())->compressUTF8encoded());
     }
 }

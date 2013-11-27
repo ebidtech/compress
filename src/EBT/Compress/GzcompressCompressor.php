@@ -16,14 +16,16 @@ use EBT\Compress\Exception\InvalidArgumentException;
 /**
  * GzcompressCompressor
  */
-class GzcompressCompressor extends BaseCompressor
+class GzcompressCompressor implements CompressorInterface
 {
-    const NAME = 'gzcompress';
+    use GzcompressCompressorTrait {
+        getName as public;
+        compressUTF8encoded as public;
+        compress as public;
+        uncompress as public;
+    }
 
-    /**
-     * @var int
-     */
-    private $level;
+    const NAME = 'gzcompress';
 
     /**
      * @param int $level    The level of compression.
@@ -44,21 +46,5 @@ class GzcompressCompressor extends BaseCompressor
         }
 
         $this->level = $level;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function compress($data)
-    {
-        return gzcompress($data, $this->level);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function uncompress($data)
-    {
-        return gzuncompress($data);
     }
 }

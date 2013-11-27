@@ -12,18 +12,32 @@
 namespace EBT\Compress;
 
 /**
- * BaseCompressor
+ * NullCompressorTrait
  */
-abstract class BaseCompressor implements CompressorInterface
+trait NullCompressorTrait
 {
-    const NAME = 'base';
+    /**
+     * {@inheritDoc}
+     */
+    public function getName()
+    {
+        return NullCompressor::NAME;
+    }
 
     /**
      * {@inheritDoc}
      */
-    public static function getName()
+    protected function compress($data)
     {
-        return static::NAME;
+        return $data;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function uncompress($data)
+    {
+        return $data;
     }
 
     /**
@@ -31,6 +45,6 @@ abstract class BaseCompressor implements CompressorInterface
      */
     public function compressUTF8encoded()
     {
-        return false;
+        return true;
     }
 }

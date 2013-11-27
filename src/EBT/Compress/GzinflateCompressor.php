@@ -14,23 +14,14 @@ namespace EBT\Compress;
 /**
  * GzinflateCompressor
  */
-class GzinflateCompressor extends BaseCompressor
+class GzinflateCompressor implements CompressorInterface
 {
     const NAME = 'gzinflate';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function compress($data)
-    {
-        return gzdeflate($data);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function uncompress($data)
-    {
-        return gzinflate($data);
+    use GzinflateCompressorTrait {
+        getName as public;
+        compressUTF8encoded as public;
+        compress as public;
+        uncompress as public;
     }
 }
