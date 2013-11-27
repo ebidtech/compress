@@ -77,6 +77,7 @@ class Test
         echo $this->uncompress($compressedData); // will print 'some text'
     }
 }
+```
 
 ### Contributing ###
 
