@@ -85,7 +85,7 @@ See CONTRIBUTING file.
 
 ### Credits ###
 
-* Emailbidding developer team, compress key developer Eduardo Oliveira (entering@gmail.com).
+* Emailbidding developer team, compress key developer [Eduardo Oliveira](https://github.com/entering) (entering@gmail.com).
 * [All contributors](https://github.com/ebidtech/compress/contributors)
 
 ### License ###
