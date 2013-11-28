@@ -90,5 +90,5 @@ See CONTRIBUTING file.
 
 ### License ###
 
-Compress is released under the MIT License. See the bundled LICENSE file for details.
+Compress library is released under the MIT License. See the bundled LICENSE file for details.
 
