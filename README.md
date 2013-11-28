@@ -79,16 +79,16 @@ class Test
 }
 ```
 
-### Contributing ###
+## Contributing ##
 
 See CONTRIBUTING file.
 
-### Credits ###
+## Credits ##
 
 * Emailbidding developer team, compress key developer [Eduardo Oliveira](https://github.com/entering) (entering@gmail.com).
 * [All contributors](https://github.com/ebidtech/compress/contributors)
 
-### License ###
+## License ##
 
 Compress library is released under the MIT License. See the bundled LICENSE file for details.
 
