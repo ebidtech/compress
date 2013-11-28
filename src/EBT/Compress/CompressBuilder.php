@@ -25,7 +25,7 @@ class CompressBuilder
     const NULL = NullCompressor::NAME;
     // @codingStandardsIgnoreEnd
 
-    protected static $mapping = array(
+    protected $mapping = array(
         self::GZCOMPRESS => 'EBT\\Compress\\GzcompressCompressor',
         self::GZENCODE => 'EBT\\Compress\\GzencodeCompressor',
         self::GZINFLATE => 'EBT\\Compress\\GzinflateCompressor',
@@ -44,30 +44,50 @@ class CompressBuilder
 
     /**
      * @param string $name
+     * @param array  $options
      *
+     * @throws Exception\InvalidArgumentException
      * @return CompressorInterface
      *
-     * @throws InvalidArgumentException
      */
-    public function get($name)
+    public function get($name, array $options = array())
     {
         $name = strtolower((string) $name);
-        $mapping = static::getMapping();
 
-        if (!isset($mapping[$name])) {
+        if (!$this->has($name)) {
             throw new InvalidArgumentException(sprintf('Unrecognized compressor "%s"', $name));
         }
 
+        $mapping = $this->getMapping();
         $className = $mapping[$name];
 
-        return new $className();
+        if ($options === array()) {
+            return new $className();
+        }
+
+        $reflection = new \ReflectionClass($className);
+        return $reflection->newInstanceArgs($options);
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function has($name)
+    {
+        $name = strtolower((string) $name);
+
+        $mapping = $this->getMapping();
+
+        return isset($mapping[$name]);
     }
 
     /**
      * @return array
      */
-    public static function getMapping()
+    public function getMapping()
     {
-        return static::$mapping;
+        return $this->mapping;
     }
 }
