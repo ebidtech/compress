@@ -3,7 +3,7 @@
 Simple wrapper that provides a common interface for data compression. Making easy to change the compression algorithm and use a common interface.
 
 [![Latest Stable Version](https://poser.pugx.org/ebidtech/compress/v/stable.png)](https://packagist.org/packages/ebidtech/compress)
- [![Build Status](https://travis-ci.org/ebidtech/compress.png?branch=v0.2)](https://travis-ci.org/ebidtech/compress) [![Coverage Status](https://coveralls.io/repos/ebidtech/compress/badge.png?branch=master)](https://coveralls.io/r/ebidtech/compress?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/52977ab3632baca8b4000002/badge.png)](https://www.versioneye.com/user/projects/52977ab3632baca8b4000002)
+ [![Build Status](https://travis-ci.org/ebidtech/compress.png?branch=master)](https://travis-ci.org/ebidtech/compress) [![Coverage Status](https://coveralls.io/repos/ebidtech/compress/badge.png?branch=master)](https://coveralls.io/r/ebidtech/compress?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/52977ab3632baca8b4000002/badge.png)](https://www.versioneye.com/user/projects/52977ab3632baca8b4000002)
 
 ## Requirements ##
 
