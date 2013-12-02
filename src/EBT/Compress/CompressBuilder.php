@@ -46,9 +46,9 @@ class CompressBuilder
      * @param string $name
      * @param array  $options
      *
-     * @throws Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
+     * 
      * @return CompressorInterface
-     *
      */
     public function get($name, array $options = array())
     {
